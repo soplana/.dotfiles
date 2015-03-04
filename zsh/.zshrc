@@ -178,3 +178,25 @@ case ${OSTYPE} in
 esac
 
 # vim:set ft=zsh:
+
+
+# プラグイン
+## インクリメンタルサーチ
+source $HOME/.dotfiles/zsh/func/incr-0.2.zsh
+## ディレクトリを戻るを便利に
+source $HOME/.dotfiles/zsh/func/bd.zsh
+
+## ディレクトリのブックマーク
+fpath=($HOME/.dotfiles/zsh/func/cd-bookmark(N-/) $fpath)
+autoload -Uz cd-bookmark
+alias cdd='cd-bookmark'
+
+## git配下のディレクトリ移動の補助
+fpath=($HOME/.dotfiles/zsh/func/cd-gitroot(N-/) $fpath)
+autoload -Uz cd-gitroot
+alias cdg='cd-gitroot'
+
+## コマンドのシンタックスハイライト
+if [ -f ~/.dotfiles/zsh/func/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
+  source ~/.dotfiles/zsh/func/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fi
