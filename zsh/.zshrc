@@ -187,16 +187,16 @@ source $HOME/.dotfiles/zsh/func/incr-0.2.zsh
 source $HOME/.dotfiles/zsh/func/bd.zsh
 
 ## ディレクトリのブックマーク
-fpath=($HOME/.dotfiles/zsh/func/cd-bookmark(N-/) $fpath)
+fpath=($HOME/.dotfiles/zsh/func/cdd(N-/) $fpath)
 autoload -Uz cd-bookmark
 alias cdd='cd-bookmark'
 
 ## git配下のディレクトリ移動の補助
-fpath=($HOME/.dotfiles/zsh/func/cd-gitroot(N-/) $fpath)
+fpath=($HOME/.dotfiles/zsh/func/cdg(N-/) $fpath)
 autoload -Uz cd-gitroot
 alias cdg='cd-gitroot'
 
 ## コマンドのシンタックスハイライト
-if [ -f ~/.dotfiles/zsh/func/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
-  source ~/.dotfiles/zsh/func/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+if [ -f ~/.dotfiles/zsh/func/syntax/zsh-syntax-highlighting.zsh ]; then
+  source ~/.dotfiles/zsh/func/syntax/zsh-syntax-highlighting.zsh
 fi
